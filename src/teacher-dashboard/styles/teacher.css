@@ -1,0 +1,181 @@
+/* ==========================================================================
+   TEACHER DASHBOARD STYLES
+   Loaded after the Student Portal's portal.css, whose shell, cards, tables,
+   badges and chips are reused. Only teacher-specific styles live here.
+   Every class starts with "tp-" so nothing clashes with other pages.
+   ========================================================================== */
+
+.tp-content { max-width: 72rem; }
+
+/* ---------- Extra button looks (used by dialogs and delete actions) ---------- */
+.btn-danger { background: #b42318; color: var(--white); }
+.btn-danger:hover { background: #912018; }
+.btn-outline-danger { background: transparent; color: #b42318; border-color: #b42318; }
+.btn-outline-danger:hover { background: #b42318; color: var(--white); }
+.sp-page-actions .btn,
+.tp-card-actions .btn,
+.tp-action-bar .btn { display: inline-flex; align-items: center; }
+.form-field select[aria-invalid="true"] { border-color: #b42318; }
+
+/* ---------- Overview ---------- */
+.tp-stats { display: grid; gap: 0.75rem; margin-top: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 560px) { .tp-stats { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .tp-stats { grid-template-columns: repeat(5, 1fr); } }
+.tp-stat { display: flex; align-items: flex-start; gap: 0.8rem; padding: 1rem; color: inherit; text-decoration: none; }
+.tp-stat-link { transition: border-color 0.2s; }
+.tp-stat-link:hover { border-color: var(--teal); }
+.tp-stat-text { display: grid; line-height: 1.3; }
+.tp-stat-text strong { font-family: var(--font-head); font-size: 1.6rem; color: var(--navy); }
+.tp-stat-text span { color: var(--text); font-size: 0.95rem; }
+.tp-stat-text small { color: var(--muted); }
+
+.tp-two-col { display: grid; gap: 0 2rem; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .tp-two-col { grid-template-columns: 1fr 1fr; align-items: start; } }
+
+.tp-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem; padding: 0.9rem 1.1rem; }
+.tp-row h3 { margin-bottom: 0.1rem; font-size: 1.05rem; }
+.tp-row p { margin: 0; font-size: 0.95rem; }
+.tp-row-end { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+.tp-activity { display: flex; align-items: flex-start; gap: 0.9rem; padding: 0.9rem 1.1rem; }
+.tp-activity h3 { margin-bottom: 0.1rem; font-size: 1.05rem; }
+.tp-activity p { margin: 0; font-size: 0.95rem; }
+.tp-date-chip { flex: none; min-width: 8.5rem; padding: 0.2rem 0.6rem; font-size: 0.9rem; font-weight: 700; text-align: center; color: var(--blue); background: #e3ecf8; border-radius: var(--radius-sm); }
+@media (max-width: 479px) {
+  .tp-activity { flex-direction: column; gap: 0.4rem; }
+}
+
+/* ---------- My Classes ---------- */
+.tp-class-card { display: grid; gap: 1rem; align-content: start; padding: 1.25rem; }
+.tp-class-card .btn { justify-self: start; }
+.tp-class-head { display: flex; align-items: center; gap: 0.8rem; }
+.tp-class-head h2 { margin: 0; font-size: 1.4rem; }
+.tp-meta { display: grid; gap: 0.6rem; margin: 0; }
+.tp-meta dt { font-size: 0.88rem; color: var(--muted); }
+.tp-meta dd { margin: 0; font-weight: 600; color: var(--navy); }
+
+/* ---------- Filters, counts, panels, forms ---------- */
+.tp-filters { display: grid; gap: 0.75rem; margin-bottom: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .tp-filters { grid-template-columns: 2fr 1fr; } .tp-filters-one { grid-template-columns: minmax(0, 24rem); } }
+/* Five filters: two per row on phones so the results stay near the top. */
+.tp-filters-five { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+.tp-filters-five > :last-child { grid-column: 1 / -1; }
+@media (min-width: 640px) {
+  .tp-filters-five { grid-template-columns: repeat(3, 1fr); }
+  .tp-filters-five > :last-child { grid-column: auto; }
+}
+@media (min-width: 1000px) { .tp-filters-five { grid-template-columns: repeat(5, 1fr); } }
+.tp-count { margin: 0 0 0.75rem; color: var(--muted); font-size: 0.95rem; }
+.tp-link-button { padding: 0.25rem 0.1rem; font: inherit; color: var(--blue); background: none; border: 0; text-decoration: underline; cursor: pointer; }
+
+.tp-panel { margin-bottom: 1.25rem; padding: 1.25rem; }
+.tp-panel h2 { font-size: 1.25rem; }
+.tp-panel > .form-note { margin: 0.75rem 0 0; }
+.tp-select-grid { display: grid; gap: 0.9rem; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .tp-select-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1000px) { .tp-select-grid { grid-template-columns: repeat(4, 1fr); } }
+.tp-form { display: grid; gap: 1rem; }
+.tp-form-actions,
+.tp-card-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem; }
+.tp-card-actions { margin-top: 0.9rem; }
+.tp-lock-note { display: flex; align-items: flex-start; gap: 0.4rem; margin-bottom: 1rem; }
+
+/* ---------- Result status, feedback and locked notes ---------- */
+.tp-status-line { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; margin: 0 0 1rem; font-weight: 600; color: var(--navy); }
+.tp-status-line .sp-tag { margin: 0; }
+.tp-feedback { margin-bottom: 1rem; padding: 1rem 1.25rem; background: var(--warn-soft); border-left: 4px solid var(--warn); border-radius: var(--radius-sm); }
+.tp-feedback h2 { font-size: 1.15rem; color: var(--warn); }
+.tp-feedback p { margin-bottom: 0.6rem; }
+.tp-locked-note { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 1rem; padding: 0.8rem 1rem; background: var(--grey-100); border-radius: var(--radius-sm); }
+.tp-locked-note p { margin: 0; }
+.tp-actions-line { margin: 0 0 1rem; }
+.tp-detail-summary { grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 900px) { .tp-detail-summary { grid-template-columns: repeat(6, 1fr); } }
+
+/* ---------- Workflow steps ---------- */
+.tp-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.75rem; grid-template-columns: 1fr; }
+@media (min-width: 700px) { .tp-steps { grid-template-columns: repeat(4, 1fr); } }
+.tp-step { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; color: var(--muted); }
+.tp-step-dot { display: inline-flex; flex: none; align-items: center; justify-content: center; width: 2rem; height: 2rem; border-radius: 50%; color: var(--muted); background: var(--grey-100); }
+.tp-step-done .tp-step-dot { color: var(--white); background: var(--teal); }
+.tp-step-current { color: var(--navy); }
+.tp-step-current .tp-step-dot { color: var(--white); background: var(--navy); }
+.tp-step.is-returned { color: var(--warn); }
+.tp-step.is-returned .tp-step-dot { background: var(--warn); }
+
+/* ---------- Tables that turn into cards on phones ---------- */
+@media (max-width: 759px) {
+  .tp-stack-table,
+  .tp-stack-table tbody,
+  .tp-stack-table tr,
+  .tp-stack-table td,
+  .tp-stack-table th { display: block; }
+  .tp-stack-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+  .tp-stack-table tr { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); }
+  .tp-stack-table tbody tr:last-child { border-bottom: 0; }
+  .tp-stack-table tbody th { padding: 0 0 0.35rem; border: 0; font-size: 1.05rem; color: var(--navy); }
+  .tp-stack-table td { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.3rem 0; border: 0; text-align: right; }
+  .tp-stack-table td::before { content: attr(data-label); flex: none; font-weight: 600; color: var(--muted); text-align: left; }
+  .tp-stack-table td.sp-action-cell { justify-content: flex-end; padding-top: 0.5rem; }
+  .tp-stack-table td.sp-action-cell::before { content: none; }
+}
+
+/* ---------- Score entry ---------- */
+.tp-cell-control { display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem; }
+.tp-score-input {
+  width: 5rem;
+  padding: 0.5rem 0.6rem;
+  font: inherit;
+  font-size: 1rem; /* stops phones zooming in on focus */
+  text-align: right;
+  color: var(--text);
+  background: var(--white);
+  border: 1px solid #aab4c3;
+  border-radius: var(--radius-sm);
+}
+.tp-score-input[aria-invalid="true"] { border-color: #b42318; background: #fff6f5; }
+.tp-cell-error { max-width: 10rem; font-size: 0.85rem; color: #b42318; }
+.tp-entry-summary { margin-bottom: 0; }
+.tp-action-bar {
+  position: sticky;
+  bottom: 0;
+  z-index: 30;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: 0.85rem 0;
+  background: rgba(246, 248, 250, 0.96);
+  border-top: 1px solid var(--border);
+}
+@media (max-width: 519px) {
+  /* Keep both buttons on one row so the bar stays short on phones. */
+  .tp-action-bar { flex-wrap: nowrap; gap: 0.5rem; padding: 0.6rem 0; }
+  .tp-action-bar .btn { flex: 1 1 0; min-width: 0; padding-inline: 0.5rem; font-size: 0.95rem; }
+}
+
+/* ---------- Messages and dialogs ---------- */
+.tp-flash { display: flex; align-items: flex-start; gap: 0.6rem; margin-bottom: 1rem; padding: 0.8rem 1rem; border-radius: var(--radius-sm); }
+.tp-flash > span { flex: 1; }
+.tp-flash button { flex: none; min-width: 2.25rem; min-height: 2.25rem; color: inherit; background: transparent; border: 0; border-radius: var(--radius-sm); cursor: pointer; }
+.tp-flash-success { color: #0b4f4a; background: var(--teal-soft); }
+.tp-flash-error { color: #8f1d12; background: #fde8e6; }
+
+.tp-dialog { width: min(32rem, calc(100vw - 2rem)); padding: 0; color: var(--text); border: 0; border-radius: var(--radius); box-shadow: 0 20px 50px rgba(18, 40, 76, 0.35); }
+.tp-dialog::backdrop { background: rgba(10, 20, 40, 0.55); }
+.tp-dialog-body { padding: 1.5rem; }
+.tp-dialog-body h2 { font-size: 1.35rem; }
+.tp-dialog-text p:last-child { margin-bottom: 0; }
+.tp-dialog-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 0.75rem; margin-top: 1.25rem; }
+@media (max-width: 519px) {
+  .tp-dialog-actions .btn { width: 100%; }
+}
+
+/* ---------- Materials and announcements ---------- */
+.tp-material { display: grid; grid-template-columns: auto 1fr; gap: 0.5rem 1rem; align-items: start; padding: 1rem 1.1rem; }
+.tp-material h3 { margin-bottom: 0.15rem; font-size: 1.1rem; }
+.tp-material-info p { margin: 0 0 0.4rem; font-size: 0.95rem; }
+.tp-material .tp-card-actions { grid-column: 1 / -1; margin-top: 0.25rem; }
+
+.tp-ann-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 0.75rem; margin-bottom: 0.4rem; color: var(--muted); font-size: 0.93rem; }
+.tp-ann-meta .sp-tag { margin: 0; }

@@ -1,0 +1,82 @@
+/* Admin Dashboard styles. Everything is prefixed ad- so nothing leaks into the
+   public site, Student Portal or Teacher Dashboard. Shell, table and form
+   styles come from portal.css and teacher.css. */
+
+.ad-content { max-width: 80rem; }
+
+.ad-stats { grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); }
+
+.ad-quick-grid { display: grid; gap: 0.75rem; grid-template-columns: 1fr; margin-bottom: 1.5rem; }
+@media (min-width: 560px) { .ad-quick-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .ad-quick-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.ad-demo-note { margin-bottom: 1rem; }
+
+.ad-count-row { list-style: none; display: flex; flex-wrap: wrap; gap: 0.75rem 1.25rem; margin: 0 0 1rem; padding: 0; }
+.ad-count-row li { display: flex; align-items: center; gap: 0.4rem; }
+
+/* Filters */
+.ad-filters-four, .ad-filters-six { grid-template-columns: 1fr; gap: 0.6rem; }
+@media (min-width: 560px) { .ad-filters-four, .ad-filters-six { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .ad-filters-four { grid-template-columns: 2fr 1fr 1fr 1fr; } .ad-filters-six { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 1200px) { .ad-filters-six { grid-template-columns: repeat(6, 1fr); } }
+
+/* Table rows */
+.ad-row-actions { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.ad-row-flag { background: var(--warn-soft, #fff4e5); }
+.ad-more { text-align: center; margin: 1rem 0; }
+
+/* Inline "adder" form used for allocations and sessions */
+.ad-adder { display: grid; gap: 0.75rem; grid-template-columns: 1fr; align-items: end; margin-bottom: 1rem; }
+@media (min-width: 720px) { .ad-adder { grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr)) auto; } }
+.ad-adder-error { grid-column: 1 / -1; margin: 0; }
+
+/* PIN display */
+.ad-pin-display { margin-top: 1rem; padding: 1rem; border: 2px dashed var(--teal, #0f766e); border-radius: 0.5rem; background: var(--teal-soft, #e6f4f1); display: grid; gap: 0.25rem; }
+.ad-pin-display strong { font-size: 1.6rem; letter-spacing: 0.08em; font-family: ui-monospace, Consolas, monospace; color: var(--navy, #0b2447); overflow-wrap: anywhere; }
+
+/* Announcement preview */
+.ad-preview { border-left: 4px solid var(--teal, #0f766e); padding-left: 1rem; display: grid; gap: 0.4rem; }
+.ad-preview h3 { margin: 0; }
+.ad-preview p { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* Calendar */
+.ad-event-list { list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: 0.75rem; }
+.ad-event { display: flex; flex-direction: column; gap: 0.75rem; padding: 1rem; }
+.ad-event h3 { margin: 0.4rem 0 0.2rem; }
+.ad-event p { margin: 0.2rem 0; }
+.ad-event-date { font-weight: 600; color: var(--navy, #0b2447); }
+@media (min-width: 640px) { .ad-event { flex-direction: row; justify-content: space-between; align-items: flex-start; } }
+
+/* Settings and profile */
+.ad-band-grid { display: grid; gap: 0.75rem; grid-template-columns: repeat(2, 1fr); }
+@media (min-width: 720px) { .ad-band-grid { grid-template-columns: repeat(3, 1fr); } }
+.ad-check { display: flex; align-items: center; gap: 0.6rem; min-height: 2.75rem; }
+.ad-check input { width: 1.25rem; height: 1.25rem; }
+.ad-profile-head { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.ad-profile-head h2 { margin: 0 0 0.25rem; }
+.ad-profile-head p { margin: 0 0 0.4rem; }
+
+.sp-hint { font-size: 0.9rem; color: #4b5563; margin-top: 1rem; }
+
+/* Small helpers used by the student and teacher detail pages */
+.ad-inline-form { display: grid; gap: 0.6rem; grid-template-columns: 1fr; align-items: end; margin-top: 0.75rem; }
+@media (min-width: 640px) { .ad-inline-form { grid-template-columns: minmax(0, 22rem) auto; } }
+.ad-adder-box { margin-top: 0.75rem; }
+.ad-filters-three { grid-template-columns: 1fr; gap: 0.6rem; }
+@media (min-width: 640px) { .ad-filters-three { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 960px) { .ad-filters-three { grid-template-columns: 2fr 1fr 1fr; } }
+.ad-sub { display: block; font-size: 0.9rem; color: #4b5563; }
+
+.ad-details { display: grid; gap: 0.75rem; grid-template-columns: 1fr; margin: 1rem 0; }
+@media (min-width: 640px) { .ad-details { grid-template-columns: repeat(2, 1fr); } }
+.ad-details dt { font-size: 0.85rem; font-weight: 700; color: #4b5563; }
+.ad-details dd { margin: 0; overflow-wrap: anywhere; }
+
+/* Summary strips, page sections and action rows */
+.ad-summary { display: flex; flex-wrap: wrap; gap: 0.4rem 2rem; padding: 1rem 1.25rem; margin-bottom: 1.25rem; }
+.ad-summary p { margin: 0; }
+.ad-content > section > h2, .ad-content > h2 { margin-top: 1.75rem; }
+.ad-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; margin: 1.25rem 0; }
+.ad-actions .tp-lock-note { margin: 0; flex-basis: 100%; }
+@media (max-width: 559px) { .ad-actions .btn { flex: 1 1 100%; } }
