@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # School Website (React + plain CSS)
 
 A public website for a Nigerian secondary school. Built with React, React Router and plain CSS only. No Tailwind, no Redux, no backend.
@@ -147,3 +148,7 @@ Setup: copy `.env.example` to `.env`. Set `VITE_API_BASE_URL` (for example `http
 ## No sample data
 
 The site ships with no fictional records. Earlier builds saved sample data in the browser; the app removes it automatically on load (`src/config/legacyData.js`). The only placeholders left are the bracketed school details (name, address, phone) in `src/config/siteConfig.js`, which you must fill in, and the general wording on the public pages in `src/config/content.js`. News and events are empty until you add items to `news` in that file.
+=======
+# school-frontend
+school interface test
+>>>>>>> 2284bb3923d4ca4ffd91d4430c2c67046c901f83
